@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#F8F9FD] text-slate-900 font-sans antialiased selection:bg-brand-100 selection:text-brand-900;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+  }
+}
+
+/* Custom 1Fi Styling Components */
+@layer components {
+  .fi-button-primary {
+    @apply inline-flex items-center justify-center font-semibold text-white bg-[#6222E4] hover:bg-[#5019C3] active:scale-[0.98] transition-all duration-200 rounded-xl px-5 py-3 shadow-md hover:shadow-fi-card disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .fi-button-secondary {
+    @apply inline-flex items-center justify-center font-semibold text-[#6222E4] bg-white border border-[#E8E1FB] hover:bg-[#F8F6FE] active:scale-[0.98] transition-all duration-200 rounded-xl px-5 py-3 shadow-sm hover:border-[#6222E4]/40;
+  }
+
+  .fi-badge-purple {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#F4F0FD] text-[#6222E4] border border-[#E8E1FB];
+  }
+
+  .fi-badge-green {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200;
+  }
+
+  .fi-badge-red {
+    @apply inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-bold tracking-wider uppercase bg-rose-50 text-rose-600 border border-rose-100;
+  }
+
+  .fi-card {
+    @apply bg-white rounded-2xl border border-slate-100 shadow-fi-card hover:shadow-fi-elevated transition-all duration-300;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Smooth pulse shimmer for skeletons */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-shimmer {
+  animation: shimmer 1.8s infinite;
+}
